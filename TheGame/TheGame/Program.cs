@@ -59,7 +59,8 @@ namespace TheGame
         {
             base.Update();
             // Every update check for input and react accordingly.
-
+            X = Util.Clamp(X, 0, Game.Width - 30);
+            Y = Util.Clamp(Y, 0, Game.Height - 30);
             // If the W key is down,
             if (Input.KeyDown(Key.W))
             {
