@@ -11,7 +11,7 @@ namespace TheGame
     {
         static void Main(string[] args)
         {
-            var game = new Game("Loading Image", 600, 480);
+            var game = new Game("Galaga Remix", 600, 480);
             // Set the background color of the game
             game.Color = Color.Black;
 
@@ -49,7 +49,7 @@ namespace TheGame
             // Create my Moving Spaceship
             Image player = new Image("GalagaSpaceship.png");
             AddGraphic(player);
-            
+            // This seems too easy.
 
             // Assign the initial move speed to be the slow speed.
             MoveSpeed = MoveSpeedSlow;
@@ -88,21 +88,7 @@ namespace TheGame
             // If the space bar key is pressed,
             if (Input.KeyPressed(Key.Space))
             {
-                // If the Entity is currently slow,
-                if (MoveSpeed == MoveSpeedSlow)
-                {
-                    // Set the Entity to fast,
-                    MoveSpeed = MoveSpeedFast;
-                    // And make its Color red.
-                    Graphic.Color = Color.Red;
-                }
-                // If the Entity is currently fast,
-                else {
-                    // Set the Entity to slow,
-                    MoveSpeed = MoveSpeedSlow;
-                    // And make its Color white.
-                    Graphic.Color = Color.White;
-                }
+                
             }
         }
 
