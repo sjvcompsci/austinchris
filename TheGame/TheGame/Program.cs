@@ -49,7 +49,7 @@ namespace TheGame
             // Create my Moving Spaceship
             Image player = new Image("GalagaSpaceship.png");
             AddGraphic(player);
-            // this seems to easy.
+            
 
             // Assign the initial move speed to be the slow speed.
             MoveSpeed = MoveSpeedSlow;
