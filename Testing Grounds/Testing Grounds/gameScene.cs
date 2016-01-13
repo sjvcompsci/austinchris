@@ -34,7 +34,7 @@ namespace Testing_Grounds
 
             if (Player.Score == 50)
             {
-                Text gameover = new Text(("Game Over! You collected all of the Luke heads!"), 16);
+                Text gameover = new Text(("Congratulations! You collected all of the Luke heads!"), 16);
                 gameover.String = "Game Over! You collected all of the Luke heads!";
                 AddGraphic(gameover, 20, 40);
                 RemoveGraphic(scoreset);
