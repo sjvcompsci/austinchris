@@ -12,8 +12,8 @@ namespace Testing_Grounds
         // Keep track of how many Collectables are picked up by the Player.
         public static int Score = 0;
         //Luke Head Counter
-        Text scoreset = new Text("The number of heads left is " + Score, 16);
-
+        
+        
         // Create a simple white rectangle to use for the image.
         
         // Create a BoxCollider to pick up collectables with (and give it the Player tag)

@@ -9,6 +9,7 @@ namespace Testing_Grounds
 {
     class gameScene : Scene
     {
+        Text scoreset = new Text(("The number of heads left is " + Player.Score), 16);
         public gameScene() : base()
         {
 
@@ -21,8 +22,16 @@ namespace Testing_Grounds
                 // Add the Collectable at the randomized position.
                 Add(new Collectible(x, y));
             }
-
+            
+            
             Add(new Player(100,100));
+        }
+        public override void Update()
+        {
+            base.Update();
+            scoreset.String = "The number of heads left is " + (50 - Player.Score);
+            AddGraphic(scoreset, 20, 20);
+
         }
     }
 }

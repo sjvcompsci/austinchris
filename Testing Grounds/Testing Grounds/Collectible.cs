@@ -43,7 +43,7 @@ namespace Testing_Grounds
                 // Remove itself from the scene when collected.
                 RemoveSelf();
                 // Increase the player score, yahoo!
-                
+                Player.Score++;
             }
         }
 
