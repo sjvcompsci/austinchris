@@ -32,6 +32,15 @@ namespace Testing_Grounds
             scoreset.String = "The number of heads left is " + (50 - Player.Score);
             AddGraphic(scoreset, 20, 20);
 
+            if (Player.Score == 50)
+            {
+                Text gameover = new Text(("Game Over! You collected all of the Luke heads!"), 16);
+                gameover.String = "Game Over! You collected all of the Luke heads!";
+                AddGraphic(gameover, 20, 40);
+                RemoveGraphic(scoreset);
+            }
+
+
         }
     }
 }

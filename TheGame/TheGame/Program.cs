@@ -22,9 +22,24 @@ namespace TheGame
             
             scene.Add(new PlayerEntity(Game.Instance.HalfWidth, Game.Instance.HalfHeight));
 
+            for (int i = 0; i < 50; i++)
+            {
+                // Check out the Rand class for random generation!
+                var x = Rand.Float(game.Width);
+                var y = Rand.Float(game.Height);
+                // Add the Collectable at the randomized position.
+                
+            }
+
             // Start the Game using the Scene with the Entities in it
             game.Start(scene);
         }
+    }
+
+    enum Tags
+    {
+        PlayerEntity,
+        Collectable
     }
 
     class PlayerEntity : Entity
@@ -34,7 +49,7 @@ namespace TheGame
         /// The current move speed of the Entity.
         /// </summary>
         public float MoveSpeed;
-
+        public static int Score = 0;
         /// <summary>
         /// The move speed for when the Entity is moving slowly.
         /// </summary>
@@ -44,16 +59,30 @@ namespace TheGame
         /// </summary>
         public const float MoveSpeedFast = 10;
 
-        public PlayerEntity(float x, float y) : base(x, y)
+      
+      
+
+            BoxCollider collider = new BoxCollider(30, 30, Tags.PlayerEntity);
+            public PlayerEntity(float x, float y) : base(x, y)
         {
             // Create my Moving Spaceship
             Image player = new Image("GalagaSpaceship.png");
             AddGraphic(player);
-            // This seems too easy.
+            BoxCollider collider = new BoxCollider(30, 30, Tags.PlayerEntity);
+            // Center the origin of the image.
+            player.CenterOrigin();
 
-            // Assign the initial move speed to be the slow speed.
+            // Add the collider. Must be added or it cant check for collision!
+            AddCollider(collider);
+            // Center the origin of the collider so it aligns with the image.
+            collider.CenterOrigin();
             MoveSpeed = MoveSpeedSlow;
         }
+
+
+        // Assign the initial move speed to be the slow speed.
+
+        
        
         public override void Update()
         {
@@ -92,6 +121,38 @@ namespace TheGame
                 
             }
         }
+
+        class Collectable : Entity
+        {
+            Image Luke = new Image("Luke's Small Head.jpg");
+            // Create a CircleCollider and tag it with the Collectable tag.
+            CircleCollider collider = new CircleCollider(10, Tags.Collectable);
+            public Collectable (float x, float y): base(x, y)
+            {
+                // Add the image for rendering.
+                AddGraphic(Luke);
+                // Center the origin of the image.
+                Luke.CenterOrigin();
+                // Create a CircleCollider and tag it with the Collectable tag.
+                CircleCollider collider = new CircleCollider(10, Tags.Collectable);
+
+            }
+            public override void Update()
+            {
+                base.Update();
+                if (collider. Overlap(X, Y, Tags.PlayerEntity))
+                {
+                    RemoveSelf();
+                    PlayerEntity.Score++;
+                }
+            }
+            public override void Render()
+            {
+                base.Render();
+            }
+        }
+        
+
 
 
 
