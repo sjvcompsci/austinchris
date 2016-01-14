@@ -9,14 +9,8 @@ namespace Testing_Grounds
 {
     class Player : Entity
     {
-        // Keep track of how many Collectables are picked up by the Player.
         public static int Score = 0;
         //Luke Head Counter
-        
-        
-        // Create a simple white rectangle to use for the image.
-        
-        // Create a BoxCollider to pick up collectables with (and give it the Player tag)
         BoxCollider collider = new BoxCollider(30, 30, TAAG.Player);
         Spritemap<Animation> s = new Spritemap<Animation>("Pacman.png", 51, 60);
 
@@ -29,9 +23,7 @@ namespace Testing_Grounds
           
             AddGraphic(s);
             s.CenterOrigin();
-            // Add the collider. Must be added or it cant check for collision!
             AddCollider(collider);
-            // Center the origin of the collider so it aligns with the image.
             collider.CenterOrigin();
         }
 
@@ -40,7 +32,6 @@ namespace Testing_Grounds
             base.Update();
             X = Util.Clamp(X, 0, Game.Width - 30);
             Y = Util.Clamp(Y, 0, Game.Height - 30);
-            // Basic movement with WASD.
             if (Input.KeyDown(Key.W))
             {
                 s.Play(Animation.Up);

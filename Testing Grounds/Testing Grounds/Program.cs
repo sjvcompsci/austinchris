@@ -11,13 +11,7 @@ namespace Testing_Grounds
     {
         static void Main(string[] args)
         {
-            // Create a Game.
             var g = new Game("Eat the Lukes", 600, 480);
-
-            
-
-
-            // Start the Game.
             g.Start(new gameScene());
             
         }

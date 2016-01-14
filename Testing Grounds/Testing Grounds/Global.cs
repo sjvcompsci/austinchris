@@ -12,7 +12,6 @@ namespace Testing_Grounds
 
     }
 
-    
     enum Animation
     {
         Up,
