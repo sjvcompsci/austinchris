@@ -21,6 +21,7 @@ namespace Testing_Grounds
                 Add(new Collectible(x, y));
             }
             Add(new Player(100, 100));
+            AddGraphic(timer, 380, 10);
         }
 
         private RichText timer = new RichText(16);
@@ -29,12 +30,12 @@ namespace Testing_Grounds
         public override void Update()
         {
             base.Update();
-            /*TimeSpan diff = timerstart - DateTime.Now;
+            TimeSpan diff = timerstart - DateTime.Now;
             int countdown = 60 + (int)diff.TotalSeconds;
 
             timer.String = "Countdown: " + countdown;
             timer.Color = Color.Black;
-            AddGraphic(timer, 380, 10);
+            
 
             if (Input.KeyDown(Key.Space))
             {
@@ -45,7 +46,7 @@ namespace Testing_Grounds
             {
                 //MAKE TIMER STOP WHEN ALL HEADS COLLECTED
                 //RemoveGraphic(timer);
-            }*/
+            }
 
             scoreset.Color = Color.Black;
             scoreset.String = "The number of heads left is " + (50 - Player.Score);
