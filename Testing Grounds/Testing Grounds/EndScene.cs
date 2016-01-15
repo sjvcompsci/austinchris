@@ -11,7 +11,7 @@ namespace Testing_Grounds
     {
         public override void Update()
         {
-            base.Update()
+            base.Update();
          
                 Text celebratetext = new Text("Congratulations! You beat the game!", 20);
                 celebratetext.Color = Color.Black;
