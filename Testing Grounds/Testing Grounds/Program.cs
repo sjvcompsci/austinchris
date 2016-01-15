@@ -12,6 +12,7 @@ namespace Testing_Grounds
         static void Main(string[] args)
         {
             var g = new Game("Eat the Lukes", 600, 480);
+            g.Color = Color.White;
             g.Start(new gameScene());
             
         }

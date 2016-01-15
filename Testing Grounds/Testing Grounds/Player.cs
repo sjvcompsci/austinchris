@@ -12,7 +12,7 @@ namespace Testing_Grounds
         public static int Score = 0;
         //Luke Head Counter
         BoxCollider collider = new BoxCollider(30, 30, TAAG.Player);
-        Spritemap<Animation> s = new Spritemap<Animation>("Pacman.png", 51, 60);
+        Spritemap<Animation> s = new Spritemap<Animation>("Pacman.png", 50, 60);
 
         public Player(float x, float y) : base(x, y)
         {
@@ -35,22 +35,22 @@ namespace Testing_Grounds
             if (Input.KeyDown(Key.W))
             {
                 s.Play(Animation.Up);
-                Y -= 3;
+                Y -= 5;
             }
             if (Input.KeyDown(Key.S))
             {
                 s.Play(Animation.Down);
-                Y += 3;
+                Y += 5;
             }
             if (Input.KeyDown(Key.A))
             {
                 s.Play(Animation.Left);
-                X -= 3;
+                X -= 5;
             }
             if (Input.KeyDown(Key.D))
             {
                 s.Play(Animation.Right);
-                X += 3;
+                X += 5;
             }
         }
     }
