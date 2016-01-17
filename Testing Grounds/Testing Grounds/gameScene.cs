@@ -9,7 +9,7 @@ namespace Testing_Grounds
 {
     class gameScene : Scene
     {
-        Text scoreset = new Text(("The number of heads left is " + Player.Score), 14);
+        Text scoreset = new Text(("The number of heads left is " + Player.Score), 16);
         public gameScene() : base()
         {
 
@@ -21,7 +21,7 @@ namespace Testing_Grounds
                 Add(new Collectible(x, y));
             }
             Add(new Player(100, 100));
-            AddGraphic(timer, 380, 10);
+            AddGraphic(timer, 380, 5);
         }
 
         private RichText timer = new RichText(16);
@@ -31,7 +31,7 @@ namespace Testing_Grounds
         {
             base.Update();
             TimeSpan diff = timerstart - DateTime.Now;
-            int countdown = 60 + (int)diff.TotalSeconds;
+            int countdown = 20 + (int)diff.TotalSeconds;
 
             timer.String = "Countdown: " + countdown;
             timer.Color = Color.Black;
@@ -61,6 +61,11 @@ namespace Testing_Grounds
                 gameover.String = "Congratulations! You collected all of the Luke heads!";
                 AddGraphic(gameover, 20, 40);
                 //RemoveGraphic(scoreset);*/
+            }
+
+            if (countdown == 0)
+            {
+                Game.SwitchScene(new GameLoser());
             }
 
 

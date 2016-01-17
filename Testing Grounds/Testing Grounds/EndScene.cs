@@ -11,11 +11,11 @@ namespace Testing_Grounds
     {
         public override void Update()
         {
-            base.Update()
+            base.Update();
          
                 Text celebratetext = new Text("Congratulations! You beat the game!", 20);
                 celebratetext.Color = Color.Black;
-                AddGraphic(celebratetext, 150, 240);
+                AddGraphic(celebratetext, 130, 220);
                 Text restartgame = new Text("Press space to play again", 20);
                 restartgame.Color = Color.Black;
             AddGraphic(restartgame, 150, 260);

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Collectible.cs" />
     <Compile Include="EndScene.cs" />
+    <Compile Include="GameLoser.cs" />
     <Compile Include="gameScene.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="MainMenu.cs" />
