@@ -32,22 +32,22 @@ namespace Testing_Grounds
             base.Update();
             X = Util.Clamp(X, 0, Game.Width - 30);
             Y = Util.Clamp(Y, 0, Game.Height - 30);
-            if (Input.KeyDown(Key.W))
+            if (Input.KeyDown(Key.W) || Input.KeyDown(Key.Up))
             {
                 s.Play(Animation.Up);
                 Y -= 5;
             }
-            if (Input.KeyDown(Key.S))
+            if (Input.KeyDown(Key.S) || Input.KeyDown(Key.Down))
             {
                 s.Play(Animation.Down);
                 Y += 5;
             }
-            if (Input.KeyDown(Key.A))
+            if (Input.KeyDown(Key.A) || Input.KeyDown(Key.Left))
             {
                 s.Play(Animation.Left);
                 X -= 5;
             }
-            if (Input.KeyDown(Key.D))
+            if (Input.KeyDown(Key.D) || Input.KeyDown(Key.Right))
             {
                 s.Play(Animation.Right);
                 X += 5;

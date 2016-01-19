@@ -31,7 +31,7 @@ namespace Testing_Grounds
         {
             base.Update();
             TimeSpan diff = timerstart - DateTime.Now;
-            int countdown = 20 + (int)diff.TotalSeconds;
+            int countdown = 15 + (int)diff.TotalSeconds;
 
             timer.String = "Countdown: " + countdown;
             timer.Color = Color.Black;
